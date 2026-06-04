@@ -1,63 +1,199 @@
-# AssetTrack IT Asset Management System
+# AssetTrack – IT Asset Management System
 
 ## Overview
-AssetTrack is a command‑line application for managing IT assets, software licenses, and employee allocations. It provides a menu‑driven interface to add, view, allocate, and report on assets, licenses, and maintenance records.
 
-## Features
-- Add, view, and delete employee records
-- Manage hardware assets (laptops, monitors, peripherals, etc.)
-- Allocate and return assets to employees
-- Track software licenses with realistic keys
-- Record maintenance activities and generate cost reports
-- Generate departmental and utilization reports
-- Search assets by employee and monitor expiring licenses
+AssetTrack is a Python and MySQL-based IT Asset Management System designed to streamline the tracking and management of organizational IT assets. The system enables efficient asset allocation, software license monitoring, maintenance tracking, and report generation through a user-friendly menu-driven interface.
 
-## Prerequisites
-- Python 3.10 or higher
-- MySQL server (or compatible MariaDB) with a database named `assettrack_db`
-- `mysql` command‑line client available in the system PATH
+This project simulates a real‑world enterprise asset management solution used by organizations to manage hardware resources and software licenses effectively.
+
+---
+
+## Key Features
+
+### Employee Management
+
+* Add and manage employee records
+* Store employee details including department and contact information
+* View employee information
+
+### Asset Management
+
+* Register and track IT assets
+* Manage asset details such as type, serial number, purchase date, and status
+* View available and allocated assets
+
+### Asset Allocation
+
+* Assign assets to employees
+* Return allocated assets
+* Maintain allocation history
+
+### Software License Management
+
+* Store software license information
+* Monitor license expiry dates
+* Generate expired and expiring license reports
+
+### Maintenance Tracking
+
+* Record maintenance activities
+* Track repair costs and service history
+* Generate maintenance reports
+
+### Reporting & Analytics
+
+* Department‑wise Asset Report
+* Asset Utilization Report
+* Maintenance Cost Report
+* Expired License Report
+* Employee Asset Search
+
+---
+
+## Technologies Used
+
+* Python 3
+* MySQL
+* MySQL Connector for Python
+* SQL
+* Git
+* GitHub
+
+---
+
+## Database Modules
+
+### Employees
+
+Stores employee information.
+
+### Assets
+
+Stores hardware asset details.
+
+### Asset Allocation
+
+Maintains asset assignment records.
+
+### Software Licenses
+
+Tracks software licenses and expiry dates.
+
+### Maintenance Records
+
+Stores maintenance and repair history.
+
+---
+
+## Project Structure
+
+```text
+assettrack-it-asset-management-system/
+│
+├── database/
+│   ├── schema.sql
+│   └── sample_data.sql
+│
+├── docs/
+│
+├── src/
+│
+├── main.py
+├── requirements.txt
+└── README.md
+```
+
+---
 
 ## Installation
-1. Clone the repository:
-   ```
-   git clone https://github.com/Mithanya/assettrack-it-asset-management-system.git
-   cd assettrack-it-asset-management-system
-   ```
-2. Set up the virtual environment and install dependencies:
-   ```
-   python -m venv venv
-   venv\Scripts\activate   # Windows
-   pip install -r requirements.txt
-   ```
-3. Create the database and import the initial schema:
-   ```
-   mysql -u root -p12345 < database\schema.sql
-   ```
-4. Populate the database with realistic mock data:
-   ```
-   mysql -u root -p12345 < database\anonymize_data.sql
-   ```
 
-## Usage
-Run the wrapper script from the project root:
-```powershell
+### Clone Repository
+
+```bash
+git clone https://github.com/Mithanya/assettrack-it-asset-management-system.git
+cd assettrack-it-asset-management-system
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Create Database
+
+```sql
+CREATE DATABASE assettrack_db;
+```
+
+### Import Database Schema
+
+```bash
+mysql -u root -p < database/schema.sql
+```
+
+### Run Application
+
+```bash
 python main.py
 ```
-The menu will be displayed. For example, selecting **4** shows the list of all assets, and **2** displays employee details.
 
-## Database Structure
-- `employees` – employee ID, name, email, and department
-- `assets` – asset ID, name, type, serial number, and status
-- `software_licenses` – license key, software name, and expiration
-- `maintenance_records` – asset ID, description, cost, and date
+---
 
-## Contributing
-1. Fork the repository and create a new branch for your feature or bug fix.
-2. Ensure the code follows PEP 8 guidelines and that existing tests pass.
-3. Submit a pull request with a clear description of changes.
+## Sample Functionalities
 
-## License
-This project is licensed under the MIT License.
+* Add Employee
+* View Employees
+* Add Asset
+* View Assets
+* Allocate Asset to Employee
+* Return Asset
+* Add Software License
+* Track Expiring Licenses
+* Add Maintenance Record
+* Search Asset by Employee
+* Department‑wise Asset Report
+* Asset Utilization Report
+* Expired License Report
+* Maintenance Cost Report
 
-## Contact
-For questions or suggestions, open an issue on the GitHub repository or contact the author at `mithanya@techsolutions.in`.
+---
+
+## Concepts Implemented
+
+* Relational Database Design
+* Primary Keys and Foreign Keys
+* SQL Joins
+* CRUD Operations
+* Aggregate Functions
+* Database Connectivity
+* Exception Handling
+* Menu‑Driven Programming
+* Reporting and Analytics
+
+---
+
+## Future Enhancements
+
+* Graphical User Interface (Tkinter)
+* Web‑Based Dashboard using Flask
+* User Authentication System
+* Email Alerts for License Expiry
+* Asset Analytics Dashboard
+* Role‑Based Access Control
+
+---
+
+## Project Objective
+
+The objective of AssetTrack is to provide an efficient solution for managing organizational IT assets, software licenses, and maintenance activities while improving visibility, accountability, and resource utilization.
+
+---
+
+## Author
+
+**Mithanya Murugesan**
+
+GitHub: https://github.com/Mithanya
+
+LinkedIn: https://www.linkedin.com/in/mithanya-murugesan/
